@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import ReactTable from "react-table";
+import React, { useState, useEffect } from "react";
 import api from "../api";
 
 import styled from "styled-components";
@@ -8,63 +7,24 @@ const Wrapper = styled.div`
   padding: 0 40px 40px 40px;
 `;
 
-class MoviesList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      movies: [],
-      columns: [],
-      isLoading: false
-    };
-  }
+function MoviesList() {
+  const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  componentDidMount = async () => {
-    this.setState({ isLoading: true });
+  useEffect(() => {
+    getMovieList();
+  });
 
+  const getMovieList = async () => {
     await api.getAllMovies().then(movies => {
-      this.setState({
-        movies: movies.data.data,
-        isLoading: false
-      });
+      setMovies(movies.data.data);
+      setIsLoading(false);
     });
   };
 
-  render() {
-    const { movies, isLoading } = this.state;
-    console.log("TCL: MoviesList -> render -> movies", movies);
+  console.log("TCL: MoviesList -> render -> movies", movies);
 
-    const columns = [
-      {
-        Header: "ID",
-        accessor: "_id",
-        filterable: true
-      },
-      {
-        Header: "Name",
-        accessor: "name",
-        filterable: true
-      },
-      {
-        Header: "Rating",
-        accessor: "rating",
-        filterable: true
-      },
-      {
-        Header: "Time",
-        accessor: "time",
-        Cell: props => <span>{props.value.join(" / ")}</span>
-      }
-    ];
-
-    let showTable = true;
-    if (!movies.length) {
-      showTable = false;
-    }
-
-    return (
-      <Wrapper>{movies.length > 0 && <p>!{movies[0]["name"]}</p>}</Wrapper>
-    );
-  }
+  return <Wrapper>{!isLoading && <p>!{movies[0]["name"]}</p>}</Wrapper>;
 }
 
 export default MoviesList;
