@@ -1,10 +1,10 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
   width: 100%;
   display: block;
-  margin: 10px auto 0;
-  padding: 0 35%;
+  margin: 0 auto 0;
+  padding: 5px 35%;
   text-align: center;
   position: fixed;
   z-index: 3;
@@ -16,7 +16,7 @@ export const HeaderWrapper = styled.div`
     }
   }
   .breadCrumbs {
-    color: white;
+    color: black;
   }
 `;
 

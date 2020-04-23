@@ -13,7 +13,6 @@ const useStyles = makeStyles(theme => ({
     position: "absolute",
     top: 900,
     textAlign: "center",
-    padding: "auto",
     width: "100vw"
   },
   root: {},

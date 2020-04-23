@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import img from "../../sources/wedding1.jpg";
 
 export const BackgroundImg = styled.div`

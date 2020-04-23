@@ -4,11 +4,6 @@ import { Link as RouterLink } from "react-router-dom";
 import Link from "@material-ui/core/Link";
 import { HeaderWrapper, Logo } from "./style";
 
-function handleClick(event) {
-  event.preventDefault();
-  console.info("You clicked a breadcrumb.");
-}
-
 export default function Header() {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -37,7 +32,7 @@ export default function Header() {
         <Link color="inherit" component={RouterLink} to="/cakes">
           Cakes
         </Link>
-        <Link color="inherit" component={RouterLink} to="/cakes">
+        <Link color="inherit" component={RouterLink} to="/prices">
           Prices
         </Link>
         <Link color="inherit" component={RouterLink} to="/cakes">
