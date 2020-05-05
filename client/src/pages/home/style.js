@@ -1,5 +1,10 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import img from "../../sources/wedding1.jpg";
+
+const AutoChange = keyframes`
+30%{opacity:1;}
+60%{opacity:0;}
+`;
 
 export const BackgroundImg = styled.div`
   background-image: url(${img});
@@ -21,4 +26,27 @@ export const BackgroundImg = styled.div`
   -o-background-size: cover;
   background-size: cover;
   z-index: 2;
+`;
+
+export const HomeImgWrapper = styled.div`
+  width: 70%;
+  height: 400px;
+  position: absolute;
+  left: 5;
+  margin: 200px 15%;
+`;
+
+export const ManyImg = styled.img`
+  position: absolute;
+  animation: ${AutoChange} 15s infinite;
+
+  :nth-child(3) {
+    animation-delay: 0s;
+  }
+  :nth-child(2) {
+    animation-delay: 5s;
+  }
+  :nth-child(1) {
+    animation-delay: 10s;
+  }
 `;

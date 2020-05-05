@@ -1,29 +1,34 @@
 import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
-  width: 100%;
+  width: 70%;
   display: block;
-  margin: 0 auto 0;
-  padding: 5px 35%;
+  background-color: #b40b24;
+  margin: 0 15%;
+  padding: 5px 0;
   text-align: center;
   position: fixed;
   z-index: 3;
   &.active {
-    background-color: white;
     transition: all 1s;
-    .breadCrumbs {
-      color: black;
-    }
-  }
-  .breadCrumbs {
-    color: black;
   }
 `;
 
 export const Logo = styled.img`
-  width: 60px;
+  height: 100px;
+  margin: 0 auto;
   &.active {
-    width: 40px;
+    transition: all 1s;
+    height: 80px;
+  }
+`;
+
+export const LinkWrapper = styled.div`
+  font-size: 30px;
+  margin: 20px 0 20px 0;
+  border-radius: 25px;
+  &:hover {
+    background-color: yellow;
     transition: all 1s;
   }
 `;

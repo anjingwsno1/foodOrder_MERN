@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from "react";
-import Breadcrumbs from "@material-ui/core/Breadcrumbs";
+import { makeStyles } from "@material-ui/core/styles";
+
+import FormControl from "@material-ui/core/FormControl";
 import { Link as RouterLink } from "react-router-dom";
 import Link from "@material-ui/core/Link";
-import { HeaderWrapper, Logo } from "./style";
+import { HeaderWrapper, Logo, LinkWrapper, SingleLinkBlock } from "./style";
+
+const useStyles = makeStyles(theme => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+    color: "white"
+  }
+}));
 
 export default function Header() {
+  const classes = useStyles();
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
   });
@@ -20,12 +32,44 @@ export default function Header() {
 
   return (
     <HeaderWrapper className={enableHeader ? "active" : null}>
-      <Logo
-        className={enableHeader ? "active" : null}
-        src={require("../sources/logo.jpeg")}
-        alt="The Studio"
-      />
-      <Breadcrumbs aria-label="breadcrumb" className="breadCrumbs">
+      <FormControl variant="outlined" className={classes.formControl}>
+        {" "}
+        <Logo
+          className={enableHeader ? "active" : null}
+          src={require("../sources/logo.jpg")}
+          alt="The Studio"
+        />
+      </FormControl>{" "}
+      <FormControl variant="outlined" className={classes.formControl}>
+        <LinkWrapper>
+          <Link color="inherit" underline="none" component={RouterLink} to="/">
+            Home
+          </Link>
+        </LinkWrapper>
+      </FormControl>{" "}
+      <FormControl variant="outlined" className={classes.formControl}>
+        <LinkWrapper>
+          <Link color="inherit" component={RouterLink} to="/">
+            Menu
+          </Link>
+        </LinkWrapper>
+      </FormControl>{" "}
+      <FormControl variant="outlined" className={classes.formControl}>
+        <LinkWrapper>
+          <Link color="inherit" component={RouterLink} to="/">
+            About
+          </Link>
+        </LinkWrapper>
+      </FormControl>{" "}
+      <FormControl variant="outlined" className={classes.formControl}>
+        <LinkWrapper>
+          {" "}
+          <Link color="inherit" component={RouterLink} to="/">
+            Location
+          </Link>
+        </LinkWrapper>
+      </FormControl>
+      {/* <Breadcrumbs aria-label="breadcrumb" className="breadCrumbs">
         <Link color="inherit" component={RouterLink} to="/">
           About
         </Link>
@@ -41,7 +85,7 @@ export default function Header() {
         <Link color="inherit" component={RouterLink} to="/cakes">
           Contact
         </Link>
-      </Breadcrumbs>
+      </Breadcrumbs> */}
     </HeaderWrapper>
   );
 }
