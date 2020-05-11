@@ -49,7 +49,7 @@ export default function Header() {
       </FormControl>{" "}
       <FormControl variant="outlined" className={classes.formControl}>
         <LinkWrapper>
-          <Link color="inherit" component={RouterLink} to="/">
+          <Link color="inherit" component={RouterLink} to="/menu">
             Menu
           </Link>
         </LinkWrapper>

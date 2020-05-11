@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
-  width: 70%;
+  width: 100%;
   display: block;
   background-color: #b40b24;
-  margin: 0 15%;
   padding: 5px 0;
   text-align: center;
   position: fixed;
@@ -31,4 +30,17 @@ export const LinkWrapper = styled.div`
     background-color: yellow;
     transition: all 1s;
   }
+`;
+
+export const FooterWrapper = styled.div`
+  display: block;
+  position: relative;
+  background-color: #d8d8d8;
+`;
+export const FooterText = styled.p`
+  color: #737373;
+  font-family: "Roboto";
+  font-size: 12px;
+  font-weight: 500;
+  padding: 15px;
 `;

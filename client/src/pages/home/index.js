@@ -1,8 +1,8 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-import About from "./components/About";
 import AutoImg from "./components/AutoImg";
+import Contact from "./components/Contact";
 
 import { HomeImgWrapper } from "./style";
 
@@ -14,7 +14,7 @@ export default function Home() {
       <HomeImgWrapper>
         <AutoImg></AutoImg>
       </HomeImgWrapper>
-      <About />
+      <Contact></Contact>
     </React.Fragment>
   );
 }

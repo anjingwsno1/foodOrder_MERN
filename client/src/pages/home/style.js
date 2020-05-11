@@ -29,14 +29,13 @@ export const BackgroundImg = styled.div`
 `;
 
 export const HomeImgWrapper = styled.div`
-  width: 70%;
-  height: 400px;
-  position: absolute;
-  left: 5;
-  margin: 200px 15%;
+  width: 100%;
+  position: relative;
+  padding-top: 110px;
 `;
 
 export const ManyImg = styled.img`
+  width: 100%;
   position: absolute;
   animation: ${AutoChange} 15s infinite;
 
@@ -49,4 +48,43 @@ export const ManyImg = styled.img`
   :nth-child(1) {
     animation-delay: 10s;
   }
+`;
+export const SmallImgWrapper = styled.div`
+  width: 100%;
+  position: relative;
+  padding: 35% 5% 5% 60%;
+`;
+
+export const SmallImg = styled.img`
+  width: 30%;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+  &:hover {
+    border: 1px solid white;
+    transition: all 0.2s;
+  }
+`;
+
+export const ContactImg = styled.img`
+  width: 250px;
+  margin: 0 auto;
+`;
+export const ContactText = styled.p`
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+`;
+export const ContactPhoneWrapper = styled.div`
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+`;
+export const ContactTitle = styled.p`
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+`;
+export const ContactPhone = styled.p`
+  text-align: center;
 `;
