@@ -4,9 +4,12 @@ export const MenuWrapper = styled.div`
   width: 80%;
   position: relative;
   padding-top: 130px;
-  margin: 50px auto;
+  margin: 0 auto;
+  margin-bottom: 50px;
 `;
-export const CategoryWrapper = styled.div``;
+export const CategoryWrapper = styled.div`
+  margin-top: 50px;
+`;
 export const MenuTitle = styled.p`
   font-size: 28px;
   font-family: "National2-Bold";
@@ -26,9 +29,26 @@ export const MenuItem = styled.div`
   }
 `;
 export const FoodWrapper = styled.div`
-  background-color: red;
+  width: 100%;
+  margin-top: 50px;
 `;
-export const FoodImg = styled.img``;
-export const FoodName = styled.p``;
+export const FoodImg = styled.img`
+  width: 100%;
+`;
+export const FoodName = styled.p`
+  font-family: "National2-Bold";
+  font-size: 16px;
+  font-weight: bold;
+`;
 export const FoodPrice = styled.p``;
-export const OrderButton = styled.div``;
+export const OrderButton = styled.div`
+  background-color: red;
+  border-radius: 3px;
+  width: 60%;
+  margin: 0 20%;
+  padding: 5px 0;
+  font-family: FontAwesome;
+  font-size: 17px;
+  color: white;
+  text-transform: uppercase;
+`;
