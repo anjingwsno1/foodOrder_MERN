@@ -19,3 +19,26 @@ export const MapWrapper = styled.div`
   width: 700px;
   height: 600px;
 `;
+export const LocationWrapper = styled.div`
+  margin: 200px auto;
+  padding-left: 80px;
+`;
+
+export const LocationImg = styled.img`
+  width: 100%;
+`;
+export const LocationName = styled.p`
+  font-size: 30px;
+`;
+export const LocationPhone = styled.p`
+  text-align: left;
+  padding-left: 30px;
+`;
+export const LocationEmail = styled.p`
+  text-align: left;
+  padding-left: 30px;
+`;
+export const LocationAddress = styled.p`
+  text-align: left;
+  padding-left: 30px;
+`;

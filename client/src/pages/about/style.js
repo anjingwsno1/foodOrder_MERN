@@ -10,6 +10,7 @@ export const MainWrapper = styled.div`
 `;
 export const BackgroundImg = styled.img`
   width: 100%;
+  height: 600px;
 `;
 export const AboutWrapper = styled.div`
   width: 80%;

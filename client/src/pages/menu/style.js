@@ -32,6 +32,15 @@ export const FoodWrapper = styled.div`
   width: 100%;
   margin-top: 50px;
 `;
+
+export const FoodItemWrapper = styled.div`
+  &.show {
+    display: block;
+  }
+  &.hidden {
+    display: none;
+  }
+`;
 export const FoodImg = styled.img`
   width: 100%;
 `;

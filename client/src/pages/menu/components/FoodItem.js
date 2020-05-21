@@ -7,7 +7,9 @@ const useStyles = makeStyles(theme => ({
     width: 250,
     backgroundColor: "#f5ebda",
     textAlign: "center",
-    paddingBottom: 10
+    paddingBottom: 10,
+    "&.show": { display: "block" },
+    "&.hidden": { display: "none" }
   }
 }));
 

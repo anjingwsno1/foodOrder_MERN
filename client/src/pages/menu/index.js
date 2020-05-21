@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 
@@ -10,7 +10,8 @@ import {
   MenuTitle,
   MenuList,
   MenuItem,
-  FoodWrapper
+  FoodWrapper,
+  FoodItemWrapper
 } from "./style";
 import Wicked_Wings_img from "../../sources/3_Wicked_Wings.jpg";
 import BBQ_Bacon_Stacker_Burger_img from "../../sources/BBQ_Bacon_Stacker_Burger.jpg";
@@ -89,6 +90,29 @@ const tileData = [
 ];
 
 export default function Menu() {
+  const [isBurgerShow, setBurgerShow] = useState(true);
+  const [isSnackShow, setSnackShow] = useState(true);
+  const [isDrinkShow, setDrinkShow] = useState(true);
+
+  function handleClick(type) {
+    if (type === "burger") {
+      setBurgerShow(true);
+      setSnackShow(false);
+      setDrinkShow(false);
+    } else if (type === "snack") {
+      setBurgerShow(false);
+      setSnackShow(true);
+      setDrinkShow(false);
+    } else if (type === "drink") {
+      setBurgerShow(false);
+      setSnackShow(false);
+      setDrinkShow(true);
+    } else {
+      setBurgerShow(true);
+      setSnackShow(true);
+      setDrinkShow(true);
+    }
+  }
   return (
     <React.Fragment>
       <CssBaseline />
@@ -98,10 +122,12 @@ export default function Menu() {
             <CategoryWrapper>
               <MenuTitle>Category</MenuTitle>
               <MenuList>
-                <MenuItem>All</MenuItem>
-                <MenuItem>Burgers</MenuItem>
-                <MenuItem>Snacks</MenuItem>
-                <MenuItem>Drinks</MenuItem>
+                <MenuItem onClick={() => handleClick("all")}>All</MenuItem>
+                <MenuItem onClick={() => handleClick("burger")}>
+                  Burgers
+                </MenuItem>
+                <MenuItem onClick={() => handleClick("snack")}>Snacks</MenuItem>
+                <MenuItem onClick={() => handleClick("drink")}>Drinks</MenuItem>
               </MenuList>
             </CategoryWrapper>
           </Grid>
@@ -110,7 +136,27 @@ export default function Menu() {
               <Grid container spacing={3}>
                 {tileData.map((object, i) => (
                   <Grid item lg={4} sm={6} xs={12}>
-                    <FoodItem item={object} index={i}></FoodItem>{" "}
+                    {object.type === "burger" && (
+                      <FoodItemWrapper
+                        className={isBurgerShow ? "show" : "hidden"}
+                      >
+                        <FoodItem item={object} index={i}></FoodItem>{" "}
+                      </FoodItemWrapper>
+                    )}
+                    {object.type === "snack" && (
+                      <FoodItemWrapper
+                        className={isSnackShow ? "show" : "hidden"}
+                      >
+                        <FoodItem item={object} index={i}></FoodItem>{" "}
+                      </FoodItemWrapper>
+                    )}
+                    {object.type === "drink" && (
+                      <FoodItemWrapper
+                        className={isDrinkShow ? "show" : "hidden"}
+                      >
+                        <FoodItem item={object} index={i}></FoodItem>{" "}
+                      </FoodItemWrapper>
+                    )}
                   </Grid>
                 ))}
               </Grid>
