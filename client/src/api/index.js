@@ -5,7 +5,7 @@ const api = axios.create({
 });
 
 export const insertMovie = payload => api.post(`/movie`, payload);
-export const getAllMovies = () => api.get(`/movies`);
+export const getAllFood = () => api.get(`/allFood`);
 export const updateMovieById = (id, payload) =>
   api.put(`/movie/${id}`, payload);
 export const deleteMovieById = id => api.delete(`/movie/${id}`);
@@ -13,7 +13,7 @@ export const getMovieById = id => api.get(`/movie/${id}`);
 
 const apis = {
   insertMovie,
-  getAllMovies,
+  getAllFood,
   updateMovieById,
   deleteMovieById,
   getMovieById

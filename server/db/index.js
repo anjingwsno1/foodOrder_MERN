@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/cakeShop", { useNewUrlParser: true })
+  .connect(
+    "mongodb+srv://anjingwsno1:762188@test-bfhj1.mongodb.net/test?retryWrites=true&w=majority",
+    { dbName: "CSC_mern", useNewUrlParser: true }
+  )
   .catch(e => {
     console.error("Connection error", e.message);
   });

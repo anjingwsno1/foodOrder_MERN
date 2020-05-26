@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
+import api from "../../api";
 
 import FoodItem from "./components/FoodItem";
 
@@ -93,6 +94,7 @@ export default function Menu() {
   const [isBurgerShow, setBurgerShow] = useState(true);
   const [isSnackShow, setSnackShow] = useState(true);
   const [isDrinkShow, setDrinkShow] = useState(true);
+  const [food, setFood] = useState([]);
 
   function handleClick(type) {
     if (type === "burger") {
@@ -113,6 +115,16 @@ export default function Menu() {
       setDrinkShow(true);
     }
   }
+  useEffect(() => {
+    getAllFood();
+  });
+
+  const getAllFood = async () => {
+    await api.getAllFood().then(foods => {
+      setFood(foods.data.data);
+    });
+  };
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -134,7 +146,7 @@ export default function Menu() {
           <Grid item lg={9} sm={12}>
             <FoodWrapper>
               <Grid container spacing={3}>
-                {tileData.map((object, i) => (
+                {food.map((object, i) => (
                   <Grid item lg={4} sm={6} xs={12}>
                     {object.type === "burger" && (
                       <FoodItemWrapper

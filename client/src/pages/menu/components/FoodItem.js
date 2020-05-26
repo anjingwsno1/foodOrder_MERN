@@ -20,7 +20,7 @@ export default function FoodItem(props) {
 
   return (
     <div className={classes.root}>
-      <FoodImg src={item.img}></FoodImg>
+      <FoodImg src={"/images/" + item.img}></FoodImg>
       <FoodName>{item.name}</FoodName>
       <FoodPrice>$ {item.price}</FoodPrice>
       <OrderButton>start order</OrderButton>
